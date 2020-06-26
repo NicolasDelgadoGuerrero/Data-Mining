@@ -3,8 +3,8 @@ title: ""
 author: ""
 date: ""
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 header-includes:
 - \usepackage{float}
 - \usepackage[spanish]{babel}
@@ -234,7 +234,7 @@ MiPlot_Univariate_Outliers(pokemon[,indice_columna],claves_outliers_normales,"Hp
 ```
 
 ```{r pressure, echo=FALSE, fig.cap="", out.width = '70%'}
-knitr::include_graphics("1.jpg")
+knitr::include_graphics("./images/1.jpg")
 ```
 
 Podemos usar los diagramas de cajas para observar los outliers. Lo hacemos para los valores normalizados y sin normalizar para ver que la distribución no cambia.
@@ -247,7 +247,7 @@ MiBoxPlot_IQR_Univariate_Outliers(pokemon_normalizado,indice_columna,coef = 1.5)
 ```
 
 ```{r pressure1, echo=FALSE, fig.cap="", out.width = '85%'}
-knitr::include_graphics("2y3.jpg")
+knitr::include_graphics("./images/2y3.png")
 ```
 
 ## 3.2 Trabajando con varias columnas simultaneamente.
@@ -339,7 +339,7 @@ MiBoxPlot_juntos(pokemon[,2:7])
 ```
 
 ```{r pressure2, echo=FALSE, fig.cap="", out.width = '75%'}
-knitr::include_graphics("4.jpg")
+knitr::include_graphics("./images/4.jpg")
 ```
 
 Es interesante comprobar que no hay apenas outliers inferiores, de hecho solo encontramos uno en la característica Hp. Eso ocurre porque los pokemon que presentan varias evoluciones en su primera etapa tienen un valor de los stats muy bajo, lo que hace que en el computo de los outliers se vean afectado y para los outlier inferiores se obtengan cotas muy bajas, incluso valores negativos. El único pokemon que presenta un valor outlier inferior es Shedinja y es un pokemon muy especial ya que solo tiene 1  punto de vida.
@@ -414,7 +414,7 @@ MiPlot_Univariate_Outliers(pokemon_subconjunto[,2],indice_de_outlier_Grubbs,"Hp"
 ```
 
 ```{r pressure3, echo=FALSE, fig.cap="", out.width = '60%'}
-knitr::include_graphics("5.jpg")
+knitr::include_graphics("./images/5.jpg")
 ```
 
 Podemos hacer todo lo anterior directamente con la función MiPlot_resultados_TestGrubbs().
@@ -436,7 +436,7 @@ Número de datos: 50
 ¿Quién es outlier?: FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE
 
 ```{r pressure4, echo=FALSE, fig.cap="", out.width = '60%'}
-knitr::include_graphics("5.jpg")
+knitr::include_graphics("./images/5.jpg")
 ```
 
 El test de Grubs se usa para detectar un único outlier de una distribución normal. La pregunta es, ¿qué ocurre cuando hay más de un outlier? El test puede fallar por un problema de masking, varios outliers hacen que el valor de la media cambie, ya que es una medida poco robusta. Con ello la distancia entre el outlier y la media no es significativamente grande para poder rechazar la hipótesis nula y no detectariamos el outlier. Veamos un ejemplo.
@@ -495,7 +495,7 @@ MiPlot_Univariate_Outliers(pokemon[,2],indices_outliers,"HP")
 ```
 
 ```{r pressure5, echo=FALSE, fig.cap="", out.width = '60%'}
-knitr::include_graphics("6.jpg")
+knitr::include_graphics("./images/6.jpg")
 ```
 
 la función MiPlot_resultados_TestRosner() hace directamente lo anterior y lanza el plot.
@@ -506,7 +506,7 @@ MiPlot_resultados_TestRosner(pokemon[,2],num_outliers = 10)
 ```
 
 ```{r pressure10, echo=FALSE, fig.cap="", out.width = '60%'}
-knitr::include_graphics("6.jpg")
+knitr::include_graphics("./images/6.jpg")
 ```
 
 \newpage
@@ -712,7 +712,7 @@ MiBiPlot_Multivariate_Outliers(pokemon_normalizado[,2:7],is_lof_outlier,"Grafico
 ```
 
 ```{r pressure6, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("7.png")
+knitr::include_graphics("./images/7.png")
 ```
 
 Los pokemon como Shuckle (231) o DeoxysAttack Forme (430) estan muy alejados de la nube de puntos por lo que presntan valores muy altos en alguna de sus variables. Los que se encuentran entre la nube de puntos como  Horsea (126) se tratan de valores anómalos porque tienen una combianacion extraña en los valores de sus stats.
@@ -734,7 +734,7 @@ MiBoxPlot_juntos_con_etiquetas(pokemon_normalizado[is_lof_outlier,2:7],is_lof_ou
 ```
 
 ```{r pressure7, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("8.png")
+knitr::include_graphics("./images/8.png")
 ```
 
 Con ello podemos observar que tanto Shuckle, DeoxysAttack Forme son valores anómalos de forma univarainte, es lo mismo que vimos en el biplot comentado anteriormente.
@@ -889,7 +889,7 @@ MiBiPlot_Clustering_Outliers(pokemon[,2:7], "K-Means Clustering Outliers")
 ```
 
 ```{r pressure8, echo=FALSE, fig.cap="", out.width = '130%'}
-knitr::include_graphics("9.png")
+knitr::include_graphics("./images/9.png")
 ```
 
 Hemos contruido el modelo con los datos normalizados, vamos a invertir el cambio de variable que hemos usado para reescalar los datos:
@@ -1128,7 +1128,7 @@ MiBiPlot_Clustering_Outliers(pokemon[,2:7], "K-Means Clustering Outliers")
 ```
 
 ```{r pressure9, echo=FALSE, fig.cap="", out.width = '130%'}
-knitr::include_graphics("10.png")
+knitr::include_graphics("./images/10.png")
 ```
 
 ## 7.3 Alternativa C.
