@@ -1,56 +1,7 @@
 ---
-title: ""
-author: ""
-date: ""
-output:
-  pdf_document: default
-  html_document: default
-header-includes:
-- \usepackage{float}
-- \usepackage[spanish]{babel}
-- \usepackage{graphicx}
-- \floatplacement{figure}{H}
-- \makeatletter
-- \renewcommand{\verbatim@font}{\ttfamily\scriptsize}
-- \makeatother
-- \usepackage{fancyhdr}
-- \pagestyle{fancy}
-- \fancyhf{}
-- \fancyhead[RO,LE]{Nicolás Delgado Guerrero}
-- \fancyhead[LO,RE]{Detec. Anomalías}
-- \fancyfoot[RO,LE]{\thepage}
-- \usepackage{amsmath, amsthm, amsfonts}
+title: "R Notebook"
+output: html_notebook
 ---
-
-\begin{titlepage}
-	
-	\begin{center}
-		\vspace*{-1in}
-		\vspace*{0.25in}
-		\vspace*{0.6in}
-		\begin{figure}[htb]
-			\begin{center}
-				\includegraphics[width=12cm]{./images/logo}
-			\end{center}
-		\end{figure}
-		\huge
-			Master en Ciencia de Datos e Ingenieria de Computadores\\
-		\vspace*{0.3in}
-		\begin{Huge}
-			\textbf{Detección de Anomalías} \\
-		\end{Huge}
-		\vspace*{0.5in}
-		\begin{huge}
-			Autor:\\
-			Nicolás Delgado Guerrero
-		\end{huge}
-	\end{center}
-	
-\end{titlepage}
-
-\tableofcontents
-
-\newpage
 
 
 
@@ -1173,21 +1124,6 @@ top_outliers_kmeans_distancia_relativa =
 top_outliers_kmeans_distancia_relativa$distancias                               
 pokemon[top_outliers_kmeans_distancia_relativa$indices,]
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
